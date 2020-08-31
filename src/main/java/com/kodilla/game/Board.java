@@ -1,6 +1,6 @@
 package com.kodilla.game;
-
-
+import java.util.ArrayList;
+import java.util.List;
 
 public class Board {
 
@@ -8,7 +8,7 @@ public class Board {
 
     public void put(int x, int y, char character) {
         board[x][y] = character;
-    } // tu to zmeinic
+    }
 
     public void initBoard() {
         put(0, 0, '-');
@@ -32,19 +32,19 @@ public class Board {
         }
         return true;
     }
-    public boolean computerTurn () {
-        for (int c = 0; c < board.length; c++) {
-            for (int d=0; d < board[c].length; d++) {
-                if (board[c][d] != '-') {
-                    return true;
+    public List<ComputerMove> getPossibleComputerMoves() {
+        List<ComputerMove> possibleComputerMoves = new ArrayList<>();
+        for ( int x = 0; x < board.length; x++) {
+            for ( int y = 0; y < board[x].length; y++) {
+                if (board[x][y] == '-') {
+                    possibleComputerMoves.add(new ComputerMove(x,y));
                 }
             }
         }
-        return false;
-
-        computer.add(computerTurn.nextInt(4));
-
-
+        return possibleComputerMoves;
+    }
+    public char getSymbol(int x, int y) {
+        return board[x][y];
     }
 
     public char whoWin() {
@@ -79,9 +79,9 @@ public class Board {
 
         @Override
         public String toString () {
-            return board[0][0] + "|" + board[0][1] + "|" + board[0][2] + "\n" +
-                    board[1][0] + "|" + board[1][1] + "|" + board[1][2] + "\n" +
-                    board[2][0] + "|" + board[2][1] + "|" + board[2][2] + "\n";
+            return board[0][0] + "|" + board[1][0] + "|" + board[2][0] + "\n" +
+                    board[0][1] + "|" + board[1][1] + "|" + board[2][1] + "\n" +
+                    board[0][2] + "|" + board[1][2] + "|" + board[2][2] + "\n";
 
 
         }

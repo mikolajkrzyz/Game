@@ -9,13 +9,10 @@ public class Main {
         Board board = new Board();
         board.initBoard();
         Game game = new Game(board);
+        char playerSymbol = 'O';
         while (!game.isGameFinished()) {
             game.play();
             System.out.println(board);
         }
-
-
-        Random computer = new Random();
-
     }
 }
