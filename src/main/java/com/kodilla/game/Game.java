@@ -43,8 +43,9 @@ public class Game {
                 if (board.getSymbol(x, y) != '-') {
                     System.out.println("Pole jest już zajęte");
                     playerMove();
+                } else {
+                    board.put(x, y, playerSymbol);
                 }
-                board.put(x, y, playerSymbol);
             } catch (ArrayIndexOutOfBoundsException e) {
                 System.out.println("Nieprawidłowe współrzędne:" + x + y);
                 playerMove();
