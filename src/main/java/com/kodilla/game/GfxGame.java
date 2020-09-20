@@ -1,8 +1,13 @@
 package com.kodilla.game;
 
+
+import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.GridPane;
+import javafx.stage.PopupWindow;
+import javafx.stage.Stage;
 
 public class GfxGame {
     private final GridPane grid;
@@ -37,6 +42,12 @@ public class GfxGame {
         showOnBoard();
         if (board.whoWin() == 'X' || board.whoWin() == 'O') {
             System.out.println("WIN");
+            BorderPane borderPane = new BorderPane();
+            Scene scene2 = new Scene(borderPane, 200, 200);
+            Stage stage2 = new Stage();
+            stage2.setScene(scene2);
+            stage2.setTitle("WYGRANA");
+            stage2.show();
             //WYŚWIETLIĆ POP UP WINDOW Z KOMUNIKATEM WYGRAŁ X lub O
         }
     }

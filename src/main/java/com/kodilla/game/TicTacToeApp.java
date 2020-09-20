@@ -9,7 +9,7 @@ import javafx.stage.Stage;
 
 
 public class TicTacToeApp extends Application {
-    private Image imageback = new Image("file:src/main/resources/backgroundgreen.png");
+    private Image imageback = new Image("file:src/main/resources/tictactoeboard.png");
 
     public static void main(String args[]) {
         launch(args);
@@ -49,6 +49,7 @@ public class TicTacToeApp extends Application {
         primaryStage.setTitle("TicTacToe");
         primaryStage.setScene(scene);
         primaryStage.show();
+
 
 
     }
